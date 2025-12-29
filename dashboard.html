@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Management Dashboard</h1>
+   <div class="top-right">
+  <span id="userEmail">Username</span><br>
+  <button id="logoutBtn">Logout</button>
+</div>
+
+
+
+    </header>
+
+    <nav class="top-nav">
+  <a href="dashboard.html" class="active">
+    🏠 Dashboard
+  </a>
+  <a href="patient.html">
+    👤  Patient
+  </a>
+  <a href="doctor.html">
+    🩺  Doctor
+  </a>
+  <a href="appointment.html">
+    📅 Appointment
+  </a>
+</nav>
+
+  
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>👤 Total Patients</h3>
+        <p id="patients-count">--</p>
+      </div>
+      <div class="card">
+        <h3>🩺 Total Doctors</h3>
+        <p id="doctors-count">--</p>
+      </div>
+      <div class="card">
+        <h3>📅 Appointments Today</h3>
+        <p id="appointments-count">--</p>
+      </div>
+    </section>
+
+    <!-- Patients List -->
+    <h2 style="margin :20px;">Patients</h2>
+    <input type="text" id="searchPatients" placeholder="Search Patients..." style="margin-left:1200px ; width: 250px;">
+    <button onclick="downloadPatients()" style="padding: 8px;margin-left: 100px;">Download Patients</button>
+    <table id="patientsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Doctors List -->
+    <h2 style="margin :20px;">Doctors</h2>
+    <input type="text" id="searchDoctors" placeholder="Search Doctors..." style="margin-left:1200px ; width: 250px;">
+    <button onclick="downloadDoctors()" style="padding: 8px;margin-left: 100px;" >Download Doctors</button>
+    <table id="doctorsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Specialization</th>
+          <th>Experience</th>
+          <th>Address</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Appointments List -->
+    <h2 style="margin :20px;">Appointments</h2>
+    <input type="text" id="searchAppointments" placeholder="Search Appointments..." style="margin-left:1200px ; width: 250px;">
+    <button onclick="downloadAppointments()" style="padding: 8px;margin-left: 100px;">Download Appointments</button>
+    <table id="appointmentsTable">
+      <thead>
+        <tr>
+          <th>Patient</th>
+          <th>Doctor</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+ <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>

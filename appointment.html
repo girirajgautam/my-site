@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADD_APPOINTMENT</title>
+  <link rel="stylesheet" href="styleappoint.css"/>
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Management Dashboard</h1>
+  </header>
+    <nav class="top-nav">
+      <a href="dashboard.html" >
+        🏠 Dashboard
+      </a>
+      <a href="patient.html">
+        👤 Patient
+      </a>
+      <a href="doctor.html">
+        🩺  Doctor
+      </a>
+      <a href="appointment.html"class="active">
+        📅  Appointment
+      </a>
+    </nav>
+  
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>👤 Total Patients</h3>
+        <p id="patients-count">--</p>
+      </div>
+      <div class="card">
+        <h3>🩺 Total Doctors</h3>
+        <p id="doctors-count">--</p>
+      </div>
+      <div class="card">
+        <h3>📅 Appointments Today</h3>
+        <p id="appointments-count">--</p>
+      </div>
+    </section>
+
+    <!-- Appointment Form -->
+<form id="appointmentForm">
+  <h2>Book Appointment</h2>
+
+  <div class="row">
+    <div class="field">
+      <label>Patient Name:</label>
+      <input type="text" id="appt-patient-name">
+    </div>
+
+    <div class="field">
+      <label>Doctor Name:</label>
+      <input type="text" id="appt-doctor-name">
+    </div>
+
+    <div class="field">
+      <label>Appointment Date:</label>
+      <input type="date" id="appt-date">
+    </div>
+
+    <div class="field">
+      <label>Appointment Time:</label>
+      <input type="time" id="appt-time">
+    </div>
+  </div>
+
+  <button type="submit">Book Appointment</button>
+</form>
+
+
+    <!-- Appointment Table -->
+<h2 style="margin :20px;">📋 Appointments List</h2>
+ <input type="text" id="searchpatient" placeholder="Search patient..." style="margin-left:1200px; padding: 8px; width: 250px;">
+    <button onclick="downloadPatient()" style="padding: 8px;margin-left: 100px;">Download Patients</button>
+  
+<table id="appointmentsTable">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Actions </th>
+      
+        
+    </tr>
+  </thead>
+
+  <tbody>
+    <!-- Rows will be added here dynamically -->
+  </tbody>
+</table>
+
+
+  </main>
+
+  <script src="scriptappointment.js"></script>
+</body>
+</html>
+<!-- Trigger redeployment -->
+<!-- Trigger redeployment -->

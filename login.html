@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMS Login</title>
+  <link rel="stylesheet" href="login.css">
+  <!-- Firebase SDK -->
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyAhUdB_W0mwaaah2kJowHsehv-4Ihqr5q4",
+  authDomain: "hospital-management-syst-3b544.firebaseapp.com",
+  projectId: "hospital-management-syst-3b544",
+  storageBucket: "hospital-management-syst-3b544.appspot.com",
+  messagingSenderId: "827158953094",
+  appId: "1:827158953094:web:b48097ffb9392fb6f26507",
+  measurementId: "G-XQW28CWG7N"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Email/password login
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("username").value; // Use username field
+  const password = document.getElementById("password").value;
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    alert(`Logged in as ${userCredential.user.email}`);
+    console.log(userCredential.user);
+
+    // Redirect to dashboard
+    window.location.href = "dashboard.html";
+
+  } catch (error) {
+    alert(error.message);
+    console.error(error);
+  }
+});
+
+// Google login
+window.googleLogin = async () => {
+  const provider = new GoogleAuthProvider();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    alert(`Logged in as ${result.user.displayName}`);
+    console.log(result.user);
+
+    // Redirect to dashboard
+    window.location.href = "dashboard.html";
+
+  } catch (error) {
+    alert(error.message);
+    console.error(error);
+  }
+};
+</script>
+
+
+
+
+</head>
+<body>
+  <div class="login-container">
+    <h2>Hospital Management System Login</h2>
+
+    <form id="loginForm">
+      <div class="field">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+      </div>
+
+      <div class="field">
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+      </div>
+
+      <div class="field">
+        <label>Role:</label>
+        <select id="role">
+          <option value="admin">Admin</option>
+          <option value="receptionist">Receptionist</option>
+          <option value="patient">Patient</option>
+        </select>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="separator">OR</div>
+
+    <!-- Login with Google Button -->
+    <div class="google-btn" onclick="googleLogin()">
+  <img src="https://developers.google.com/identity/images/g-logo.png" width="20">
+  <span>Login with Google</span>
+</div>
+  <script src="login.js"></script>
+</body>
+</html>

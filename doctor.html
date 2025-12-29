@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADD_DOCTOR</title>
+  <link rel="stylesheet" href="styledoctor.css"/>
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Management Dashboard</h1>
+    </header>
+    <nav class="top-nav">
+      <a href="dashboard.html">
+        🏠 Dashboard
+      </a>
+      <a href="patient.html">
+        👤  Patient
+      </a>
+      <a href="doctor.html" class="active">
+        🩺  Doctor
+      </a>
+      <a href="appointment.html">
+        📅  Appointment
+      </a>
+    </nav>
+  
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>👤 Total Patients</h3>
+        <p id="patients-count">--</p>
+      </div>
+      <div class="card">
+        <h3>🩺 Total Doctors</h3>
+        <p id="doctors-count">--</p>
+      </div>
+      <div class="card">
+        <h3>📅 Appointments Today</h3>
+        <p id="appointments-count">--</p>
+      </div>
+    </section>
+
+    <!-- Doctor Form -->
+    <form id="doctorForm">
+      <h2>Add Doctor</h2>
+
+      <div class="row">
+        <div class="field">
+          <label>Doctor Name:</label>
+          <input type="text" id="doctor-name">
+        </div>
+        <div class="field">
+          <label>Specialization:</label>
+          <input type="text" id="doctor-specialization">
+        </div>
+        <div class="field">
+          <label>Experience:</label>
+          <input type="text" id="doctor-experience">
+        </div>
+        <div class="field">
+          <label>Address:</label>
+          <input type="text" id="doctor-address">
+        </div>
+        <div class="field">
+          <label>Phone:</label>
+          <input type="text" id="doctor-phone">
+        </div>
+      </div>
+
+      <button type="submit">Add Doctor</button>
+    </form>
+
+    
+
+    <h2 style="margin :20px; ">🩺 Doctors List</h2>
+     <input type="text" id="searchDoctor" placeholder="Search doctor..." style="margin-left:1200px; padding: 8px; width: 250px;">
+    <button onclick="downloadDoctors()" style="padding: 8px;margin-left: 100px;">Download Doctors</button>
+  
+    <table id="doctorsTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specialization</th>
+      <th>Experience</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Actions</th>
+      
+
+    </tr>
+  </thead>
+    <tbody>
+
+    </tbody>
+</table>
+   
+  </main>
+
+  <script src="doctor.js"></script>
+</body>
+</html>

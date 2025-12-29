@@ -1,0 +1,92 @@
+<!-- Deployment test -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADD_PATIENT</title>
+  <link rel="stylesheet" href="stylepatient.css"/>
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Management Dashboard</h1>
+  </header>
+    <nav class="top-nav">
+      <a href="dashboard.html">
+        🏠 Dashboard
+      </a>
+      <a href="patient.html" class="active">
+        👤  Patient
+      </a>
+      <a href="doctor.html">
+        🩺  Doctor
+      </a>
+      <a href="appointment.html">
+        📅  Appointment
+      </a>
+    </nav>
+  
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h3>👤 Total Patients</h3>
+        <p id="patients-count">--</p>
+      </div>
+      <div class="card">
+        <h3>🩺 Total Doctors</h3>
+        <p id="doctors-count">--</p>
+      </div>
+      <div class="card">
+        <h3>📅 Appointments Today</h3>
+        <p id="appointments-count">--</p>
+      </div>
+    </section>
+
+    
+    <!-- Patient Form -->
+    <form id="patientForm">
+      <h2>Add Patient</h2>
+
+      <div class="row">
+        <div class="field">
+          <label>Patient Name:</label>
+          <input type="text" id="patient-name">
+        </div>
+        <div class="field">
+          <label>Age:</label>
+          <input type="number" id="patient-age">
+        </div>
+        <div class="field">
+          <label>Address:</label>
+          <input type="text" id="patient-address">
+        </div>
+      </div>
+
+      <button type="submit">Add Patient</button>
+    </form>
+    <h2 style="margin:20px;">👤 Patients List</h2>
+     <input type="text" id="searchpatients" placeholder="Search patients..." style="margin-left:1200px; padding: 8px; width: 250px;">
+    <button onclick="downloadpatients()" style="padding: 8px;margin-left: 100px;">Download Patients</button>
+  
+    <table id="patientsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+
+  </main>
+
+  <script src="patients.js"></script>
+</body>
+</html>
+<!-- Trigger redeployment -->
+<!-- Trigger redeployment -->
