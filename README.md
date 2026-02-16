@@ -1,4 +1,4 @@
-visit my website at hmssitegautam1.com
+visit my website at https://girirajgautam.github.io/my-site/
 # 🏥 Hospital Management System (HMS)
 
 A complete web-based Hospital Management System built using **HTML, CSS, JavaScript**, and **Azure SQL**.  
